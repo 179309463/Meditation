@@ -1,9 +1,16 @@
-import React, { useState, Children } from 'react';
+import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { PlayIcon, SmileIcon, HeartIcon, MoonIcon, BabyIcon, SparklesIcon } from 'lucide-react';
 import { BottomNav } from '../components/BottomNav';
 import { useNavigate } from 'react-router-dom';
 import type { Course } from './CourseDetailPage';
+import maskGroup5 from '../assets/mask-group-5.png';
+import maskGroup11 from '../assets/mask-group-11.png';
+import maskGroup12 from '../assets/mask-group-12.png';
+import maskGroup13 from '../assets/mask-group-13.png';
+import maskGroup14 from '../assets/mask-group-14.png';
+import maskGroup15 from '../assets/mask-group-15.png';
+
 const categories = [{
   id: 'all',
   label: '全部',
@@ -25,31 +32,33 @@ const categories = [{
   label: '儿童',
   icon: <BabyIcon className="w-4 h-4" />
 }];
+
 const meditationItems = [{
   id: 1,
   title: '7天平静',
   duration: '第1天 / 共7天',
   bgColor: '#8B7FE8',
-  emoji: '🧘‍♀️'
+  image: maskGroup11
 }, {
   id: 2,
   title: '释放焦虑',
   duration: '10 分钟',
   bgColor: '#FFB4A9',
-  emoji: '🌸'
+  image: maskGroup12
 }, {
   id: 3,
   title: '每日平静',
   duration: '15 分钟',
   bgColor: '#B8E0D2',
-  emoji: '🌿'
+  image: maskGroup13
 }, {
   id: 4,
   title: '专注',
   duration: '10 分钟',
   bgColor: '#FFE5B4',
-  emoji: '🎯'
+  image: maskGroup14
 }];
+
 const containerVariants = {
   hidden: {
     opacity: 0
@@ -61,6 +70,7 @@ const containerVariants = {
     }
   }
 };
+
 const itemVariants = {
   hidden: {
     opacity: 0,
@@ -71,6 +81,7 @@ const itemVariants = {
     y: 0
   }
 };
+
 export function MeditatePage() {
   const [activeCategory, setActiveCategory] = useState('all');
   const navigate = useNavigate();
@@ -145,16 +156,20 @@ export function MeditatePage() {
         bgColor: '#FFE5B4',
         illustrationType: 'emoji',
         illustrationValue: '🌿'
-      })} className="bg-[#FFE5B4] rounded-3xl p-5 flex items-center justify-between cursor-pointer">
-          <div>
-            <h3 className="text-lg font-bold text-[#3F414E]">每日平静</h3>
-            <span className="text-xs text-[#3F414E]/60">
-              4月30日 • 暂停练习
-            </span>
+      })} className="rounded-3xl relative overflow-hidden cursor-pointer h-32">
+          <img src={maskGroup5} alt="Daily Calm" className="absolute inset-0 w-full h-full object-cover" />
+          <div className="absolute inset-0 bg-gradient-to-r from-[#FFE5B4]/90 to-transparent" />
+          <div className="relative z-10 p-5 h-full flex items-center justify-between">
+            <div>
+              <h3 className="text-lg font-bold text-[#3F414E]">每日平静</h3>
+              <span className="text-xs text-[#3F414E]/60">
+                4月30日 • 暂停练习
+              </span>
+            </div>
+            <button className="w-16 h-16 bg-[#3F414E] rounded-full flex items-center justify-center">
+              <PlayIcon className="w-6 h-6 text-white fill-white ml-1" />
+            </button>
           </div>
-          <button className="w-16 h-16 bg-[#3F414E] rounded-full flex items-center justify-center">
-            <PlayIcon className="w-6 h-6 text-white fill-white ml-1" />
-          </button>
         </div>
       </motion.div>
 
@@ -172,12 +187,12 @@ export function MeditatePage() {
           listening: 2000 + item.id * 100,
           bgColor: item.bgColor,
           illustrationType: 'emoji',
-          illustrationValue: item.emoji
+          illustrationValue: '🧘'
         })} className="cursor-pointer">
-              <div className="h-32 rounded-2xl mb-2 flex items-center justify-center" style={{
+              <div className="h-32 rounded-2xl mb-2 overflow-hidden" style={{
             backgroundColor: item.bgColor
           }}>
-                <span className="text-4xl">{item.emoji}</span>
+                <img src={item.image} alt={item.title} className="w-full h-full object-cover" />
               </div>
               <h3 className="text-sm font-semibold text-[#3F414E]">
                 {item.title}
@@ -208,13 +223,14 @@ export function MeditatePage() {
         bgColor: '#F6F1FB',
         illustrationType: 'emoji',
         illustrationValue: '🎯'
-      })} className="bg-[#F6F1FB] rounded-3xl p-6 cursor-pointer">
-          <div className="flex items-center justify-between">
+      })} className="rounded-3xl relative overflow-hidden cursor-pointer h-28">
+          <img src={maskGroup15} alt="Focus Attention" className="absolute inset-0 w-full h-full object-cover" />
+          <div className="absolute inset-0 bg-gradient-to-r from-[#F6F1FB]/90 to-transparent" />
+          <div className="relative z-10 p-6 h-full flex items-center justify-between">
             <div>
               <h3 className="text-lg font-bold text-[#3F414E]">专注力</h3>
               <span className="text-xs text-[#A1A4B2]">7天平静</span>
             </div>
-            <span className="text-5xl">🎯</span>
           </div>
         </div>
       </motion.div>

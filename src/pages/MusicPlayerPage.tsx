@@ -3,15 +3,22 @@ import { motion } from 'framer-motion';
 import { useNavigate } from 'react-router-dom';
 import { XIcon, HeartIcon, DownloadIcon } from 'lucide-react';
 import { AudioPlayer } from '../components/AudioPlayer';
+import maskGroup21 from '../assets/mask-group-21.png';
+import maskGroup27 from '../assets/mask-group-27.png';
+import maskGroup23 from '../assets/mask-group-23.png';
+
 const relatedTracks = [{
   id: 1,
   title: '月亮云彩',
-  duration: '45 分钟 • 助眠音乐'
+  duration: '45 分钟 • 助眠音乐',
+  image: maskGroup27
 }, {
   id: 2,
   title: '甜蜜睡眠',
-  duration: '45 分钟 • 助眠音乐'
+  duration: '45 分钟 • 助眠音乐',
+  image: maskGroup23
 }];
+
 export function MusicPlayerPage() {
   const navigate = useNavigate();
   return <motion.main initial={{
@@ -54,10 +61,8 @@ export function MusicPlayerPage() {
     }} className="flex-1 flex items-center justify-center px-6">
         <div className="relative w-64 h-64">
           <div className="absolute inset-0 bg-gradient-to-br from-[#4A90D9] to-[#8B7FE8] rounded-full opacity-30 blur-3xl" />
-          <div className="relative w-full h-full flex items-center justify-center">
-            <div className="w-48 h-48 bg-gradient-to-br from-[#1F265E] to-[#3F4B8C] rounded-full flex items-center justify-center">
-              <span className="text-7xl">🌙</span>
-            </div>
+          <div className="relative w-full h-full rounded-3xl overflow-hidden">
+            <img src={maskGroup21} alt="Night Island" className="w-full h-full object-cover" />
           </div>
           {/* Stars */}
           <motion.div animate={{
@@ -133,8 +138,8 @@ export function MusicPlayerPage() {
           {relatedTracks.map(track => <motion.div key={track.id} whileHover={{
           x: 4
         }} className="flex items-center gap-4 p-3 bg-white/5 rounded-2xl cursor-pointer">
-              <div className="w-14 h-14 bg-gradient-to-br from-[#1F265E] to-[#3F4B8C] rounded-xl flex items-center justify-center flex-shrink-0">
-                <span className="text-2xl">🌙</span>
+              <div className="w-14 h-14 rounded-xl overflow-hidden flex-shrink-0">
+                <img src={track.image} alt={track.title} className="w-full h-full object-cover" />
               </div>
               <div>
                 <h3 className="text-sm font-semibold text-white">

@@ -1,9 +1,16 @@
-import React, { Children } from 'react';
+import React from 'react';
 import { motion } from 'framer-motion';
 import { PlayIcon, HeartIcon, HeadphonesIcon } from 'lucide-react';
 import { BottomNav } from '../components/BottomNav';
 import { useNavigate } from 'react-router-dom';
 import type { Course } from './CourseDetailPage';
+import logoSvg from '../assets/logo.svg';
+import maskGroup11 from '../assets/mask-group-11.png';
+import maskGroup10 from '../assets/mask-group-10.png';
+import maskGroup5 from '../assets/mask-group-5.png';
+import maskGroup6 from '../assets/mask-group-6.png';
+import maskGroup7 from '../assets/mask-group-7.png';
+
 const containerVariants = {
   hidden: {
     opacity: 0
@@ -15,6 +22,7 @@ const containerVariants = {
     }
   }
 };
+
 const itemVariants = {
   hidden: {
     opacity: 0,
@@ -25,22 +33,27 @@ const itemVariants = {
     y: 0
   }
 };
+
 const recommendedItems = [{
   id: 1,
   title: 'Focus',
   duration: 'MEDITATION • 3-10 MIN',
-  bgColor: '#8B7FE8'
+  bgColor: '#8B7FE8',
+  image: maskGroup5
 }, {
   id: 2,
   title: 'Happiness',
   duration: 'MEDITATION • 3-10 MIN',
-  bgColor: '#FFB4A9'
+  bgColor: '#FFB4A9',
+  image: maskGroup6
 }, {
   id: 3,
-  title: 'Focus',
+  title: 'Relax',
   duration: 'MEDITATION • 3-10 MIN',
-  bgColor: '#B8E0D2'
+  bgColor: '#B8E0D2',
+  image: maskGroup7
 }];
+
 export function HomePage() {
   const navigate = useNavigate();
   const navigateToCourse = (courseData: Course) => {
@@ -65,15 +78,7 @@ export function HomePage() {
 
         <header className="pt-8 px-6">
           <div className="flex items-center justify-between mb-2">
-            <div>
-              <span className="text-lg font-semibold text-[#3F414E] tracking-wider">
-                Silent
-              </span>
-              <span className="mx-1">🌙</span>
-              <span className="text-lg font-semibold text-[#3F414E] tracking-wider">
-                Moon
-              </span>
-            </div>
+            <img src={logoSvg} alt="Silent Moon" className="h-6" />
           </div>
         </header>
 
@@ -102,19 +107,18 @@ export function HomePage() {
           bgColor: '#8B7FE8',
           illustrationType: 'circle',
           illustrationValue: 'white'
-        })} className="bg-[#8B7FE8] rounded-3xl p-5 relative overflow-hidden cursor-pointer">
-            <span className="text-xs font-medium text-white/80 uppercase tracking-wide">
-              课程
-            </span>
-            <h3 className="text-lg font-bold text-white mt-1">基础</h3>
-            <span className="text-xs text-white/70 block mt-1">3-10 分钟</span>
-            <button className="mt-3 bg-white/20 text-white text-xs font-medium px-4 py-2 rounded-full">
-              开始
-            </button>
-            <div className="absolute -bottom-4 -right-4 w-24 h-24 opacity-30">
-              <svg viewBox="0 0 100 100" className="w-full h-full">
-                <circle cx="50" cy="50" r="40" fill="white" />
-              </svg>
+        })} className="bg-[#8B7FE8] rounded-3xl relative overflow-hidden cursor-pointer h-48">
+            <img src={maskGroup11} alt="Basics" className="absolute inset-0 w-full h-full object-cover" />
+            <div className="absolute inset-0 bg-gradient-to-t from-[#8B7FE8]/80 to-transparent" />
+            <div className="absolute bottom-0 left-0 right-0 p-5">
+              <span className="text-xs font-medium text-white/80 uppercase tracking-wide">
+                课程
+              </span>
+              <h3 className="text-lg font-bold text-white mt-1">基础</h3>
+              <span className="text-xs text-white/70 block mt-1">3-10 分钟</span>
+              <button className="mt-3 bg-white/20 text-white text-xs font-medium px-4 py-2 rounded-full">
+                开始
+              </button>
             </div>
           </motion.div>
 
@@ -130,21 +134,20 @@ export function HomePage() {
           bgColor: '#FFE5B4',
           illustrationType: 'circle',
           illustrationValue: '#3F414E'
-        })} className="bg-[#FFE5B4] rounded-3xl p-5 relative overflow-hidden cursor-pointer">
-            <span className="text-xs font-medium text-[#3F414E]/70 uppercase tracking-wide">
-              音乐
-            </span>
-            <h3 className="text-lg font-bold text-[#3F414E] mt-1">放松</h3>
-            <span className="text-xs text-[#3F414E]/60 block mt-1">
-              3-10 分钟
-            </span>
-            <button className="mt-3 bg-[#3F414E] text-white text-xs font-medium px-4 py-2 rounded-full">
-              开始
-            </button>
-            <div className="absolute -bottom-4 -right-4 w-24 h-24 opacity-20">
-              <svg viewBox="0 0 100 100" className="w-full h-full">
-                <circle cx="50" cy="50" r="40" fill="#3F414E" />
-              </svg>
+        })} className="bg-[#FFE5B4] rounded-3xl relative overflow-hidden cursor-pointer h-48">
+            <img src={maskGroup10} alt="Relaxation" className="absolute inset-0 w-full h-full object-cover" />
+            <div className="absolute inset-0 bg-gradient-to-t from-[#FFE5B4]/80 to-transparent" />
+            <div className="absolute bottom-0 left-0 right-0 p-5">
+              <span className="text-xs font-medium text-[#3F414E]/70 uppercase tracking-wide">
+                音乐
+              </span>
+              <h3 className="text-lg font-bold text-[#3F414E] mt-1">放松</h3>
+              <span className="text-xs text-[#3F414E]/60 block mt-1">
+                3-10 分钟
+              </span>
+              <button className="mt-3 bg-[#3F414E] text-white text-xs font-medium px-4 py-2 rounded-full">
+                开始
+              </button>
             </div>
           </motion.div>
         </div>
@@ -210,10 +213,10 @@ export function HomePage() {
           illustrationType: 'emoji',
           illustrationValue: '🧘'
         })} className="flex-shrink-0 w-40 cursor-pointer">
-              <div className="h-28 rounded-2xl mb-2 flex items-center justify-center" style={{
+              <div className="h-28 rounded-2xl mb-2 overflow-hidden" style={{
             backgroundColor: item.bgColor
           }}>
-                <span className="text-3xl">🧘</span>
+                <img src={item.image} alt={item.title} className="w-full h-full object-cover" />
               </div>
               <h3 className="text-sm font-semibold text-[#3F414E]">
                 {item.title}

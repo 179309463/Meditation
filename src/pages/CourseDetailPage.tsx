@@ -2,6 +2,8 @@ import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { useNavigate, useLocation } from 'react-router-dom';
 import { ArrowLeftIcon, HeartIcon, DownloadIcon, HeadphonesIcon, PlayIcon } from 'lucide-react';
+import maskGroup10 from '../assets/mask-group-10.png';
+
 // Define the Course type with serializable image data
 export type Course = {
   title: string;
@@ -12,9 +14,11 @@ export type Course = {
   listening: number;
   bgColor: string;
   textColor?: string;
-  illustrationType: 'sun' | 'circle' | 'emoji';
-  illustrationValue?: string; // color for circle, or emoji character
+  illustrationType: 'sun' | 'circle' | 'emoji' | 'image';
+  illustrationValue?: string; // color for circle, emoji character, or image path
+  image?: string;
 };
+
 const defaultTracks = [{
   id: 1,
   title: '集中注意力',
@@ -28,10 +32,12 @@ const defaultTracks = [{
   title: '创造快乐',
   duration: '3 分钟'
 }];
+
 export function CourseDetailPage() {
   const navigate = useNavigate();
   const location = useLocation();
   const [activeTab, setActiveTab] = useState<'MALE' | 'FEMALE'>('MALE');
+  
   // Get course data from location state, fallback to default if accessed directly
   const course = location.state as Course || {
     title: '快乐早晨',
@@ -43,30 +49,7 @@ export function CourseDetailPage() {
     bgColor: '#F2C94C',
     illustrationType: 'sun'
   };
-  const renderIllustration = () => {
-    switch (course.illustrationType) {
-      case 'sun':
-        return <svg viewBox="0 0 400 300" className="w-full h-full">
-            <circle cx="200" cy="150" r="80" fill="#F2C94C" />
-            <g stroke="#3F414E" strokeWidth="2" opacity="0.1">
-              {[...Array(24)].map((_, i) => <line key={i} x1="200" y1="150" x2={200 + Math.cos(i * 15 * Math.PI / 180) * 300} y2={150 + Math.sin(i * 15 * Math.PI / 180) * 300} />)}
-            </g>
-            <path d="M170 140 Q180 130 190 140" stroke="#3F414E" strokeWidth="3" fill="none" />
-            <path d="M210 140 Q220 130 230 140" stroke="#3F414E" strokeWidth="3" fill="none" />
-            <path d="M190 160 Q200 170 210 160" stroke="#3F414E" strokeWidth="3" fill="none" />
-            <circle cx="165" cy="155" r="8" fill="#FF9EAE" opacity="0.6" />
-            <circle cx="235" cy="155" r="8" fill="#FF9EAE" opacity="0.6" />
-          </svg>;
-      case 'circle':
-        return <svg viewBox="0 0 100 100" className="w-full h-full opacity-50">
-            <circle cx="50" cy="50" r="40" fill={course.illustrationValue || 'white'} />
-          </svg>;
-      case 'emoji':
-        return <span className="text-9xl">{course.illustrationValue}</span>;
-      default:
-        return null;
-    }
-  };
+
   return <motion.main initial={{
     opacity: 0
   }} animate={{
@@ -79,8 +62,8 @@ export function CourseDetailPage() {
       backgroundColor: course.bgColor
     }}>
         {/* Illustration */}
-        <div className="absolute inset-0 flex items-center justify-center mt-12">
-          {renderIllustration()}
+        <div className="absolute inset-0">
+          <img src={maskGroup10} alt={course.title} className="w-full h-full object-cover" />
         </div>
 
         {/* Header Controls */}

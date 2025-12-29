@@ -2,6 +2,9 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { useNavigate } from 'react-router-dom';
 import { Button } from '../components/Button';
+import logo1Svg from '../assets/logo-1.svg';
+import group10Png from '../assets/group-10.png';
+
 export function OnboardingWelcome() {
   const navigate = useNavigate();
   return <motion.main initial={{
@@ -13,16 +16,8 @@ export function OnboardingWelcome() {
   }} className="min-h-screen bg-[#8B7FE8] flex flex-col">
       {/* Logo */}
       <header className="pt-8 px-6">
-        <div className="flex items-center justify-center gap-2">
-          <span className="text-lg font-semibold text-white tracking-wider">
-            Silent
-          </span>
-          <svg className="w-6 h-6 text-white" viewBox="0 0 24 24" fill="currentColor">
-            <path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z" />
-          </svg>
-          <span className="text-lg font-semibold text-white tracking-wider">
-            Moon
-          </span>
+        <div className="flex items-center justify-center">
+          <img src={logo1Svg} alt="Silent Moon" className="h-8" />
         </div>
       </header>
 
@@ -37,29 +32,7 @@ export function OnboardingWelcome() {
       delay: 0.2
     }} className="flex-1 flex items-center justify-center px-6 py-8">
         <div className="relative w-full max-w-xs">
-          <svg viewBox="0 0 300 250" className="w-full h-auto">
-            {/* Meditation person */}
-            <g transform="translate(100, 50)">
-              {/* Body */}
-              <ellipse cx="50" cy="120" rx="40" ry="30" fill="#A594F9" />
-              {/* Head */}
-              <circle cx="50" cy="60" r="30" fill="#FFD5C8" />
-              {/* Hair */}
-              <path d="M25 45 Q50 20 75 45 Q80 35 70 25 Q50 5 30 25 Q20 35 25 45" fill="#3F414E" />
-              {/* Face */}
-              <circle cx="40" cy="58" r="3" fill="#3F414E" />
-              <circle cx="60" cy="58" r="3" fill="#3F414E" />
-              <path d="M42 72 Q50 78 58 72" stroke="#3F414E" strokeWidth="2" fill="none" />
-              {/* Arms */}
-              <ellipse cx="15" cy="100" rx="15" ry="8" fill="#FFD5C8" />
-              <ellipse cx="85" cy="100" rx="15" ry="8" fill="#FFD5C8" />
-            </g>
-            {/* Decorative elements */}
-            <circle cx="50" cy="50" r="8" fill="white" opacity="0.3" />
-            <circle cx="250" cy="80" r="6" fill="white" opacity="0.3" />
-            <circle cx="40" cy="180" r="5" fill="white" opacity="0.3" />
-            <circle cx="260" cy="200" r="7" fill="white" opacity="0.3" />
-          </svg>
+          <img src={group10Png} alt="Meditation illustration" className="w-full h-auto" />
         </div>
       </motion.div>
 

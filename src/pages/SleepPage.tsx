@@ -1,8 +1,14 @@
-import React, { useState, Children } from 'react';
+import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { SmileIcon, HeartIcon, MoonIcon, BabyIcon, SparklesIcon } from 'lucide-react';
 import { BottomNav } from '../components/BottomNav';
 import { useNavigate } from 'react-router-dom';
+import maskGroup20 from '../assets/mask-group-20.png';
+import maskGroup16 from '../assets/mask-group-16.png';
+import maskGroup23 from '../assets/mask-group-23.png';
+import maskGroup21 from '../assets/mask-group-21.png';
+import maskGroup27 from '../assets/mask-group-27.png';
+
 const categories = [{
   id: 'all',
   label: '全部',
@@ -24,23 +30,29 @@ const categories = [{
   label: '儿童',
   icon: <BabyIcon className="w-4 h-4" />
 }];
+
 const sleepStories = [{
   id: 1,
   title: '夜之岛',
-  duration: '45 分钟 • 助眠音乐'
+  duration: '45 分钟 • 助眠音乐',
+  image: maskGroup16
 }, {
   id: 2,
   title: '甜蜜睡眠',
-  duration: '45 分钟 • 助眠音乐'
+  duration: '45 分钟 • 助眠音乐',
+  image: maskGroup23
 }, {
   id: 3,
   title: '晚安',
-  duration: '45 分钟 • 助眠音乐'
+  duration: '45 分钟 • 助眠音乐',
+  image: maskGroup21
 }, {
   id: 4,
   title: '月亮云彩',
-  duration: '45 分钟 • 助眠音乐'
+  duration: '45 分钟 • 助眠音乐',
+  image: maskGroup27
 }];
+
 const containerVariants = {
   hidden: {
     opacity: 0
@@ -52,6 +64,7 @@ const containerVariants = {
     }
   }
 };
+
 const itemVariants = {
   hidden: {
     opacity: 0,
@@ -62,6 +75,7 @@ const itemVariants = {
     y: 0
   }
 };
+
 export function SleepPage() {
   const [activeCategory, setActiveCategory] = useState('all');
   const navigate = useNavigate();
@@ -97,14 +111,8 @@ export function SleepPage() {
       }} transition={{
         delay: 0.2
       }} className="flex justify-center mb-6">
-          <div className="relative w-48 h-32">
-            <div className="absolute inset-0 flex items-center justify-center">
-              <div className="w-32 h-20 bg-[#4A90D9] rounded-full flex items-center justify-center">
-                <span className="text-5xl">🌙</span>
-              </div>
-            </div>
-            <div className="absolute bottom-0 left-1/4 text-3xl">😴</div>
-            <div className="absolute bottom-0 right-1/4 text-3xl">💤</div>
+          <div className="relative w-48 h-32 rounded-2xl overflow-hidden">
+            <img src={maskGroup20} alt="Sleep" className="w-full h-full object-cover" />
           </div>
         </motion.div>
       </div>
@@ -135,17 +143,18 @@ export function SleepPage() {
     }} transition={{
       delay: 0.4
     }} className="px-6 mt-6">
-        <div className="bg-gradient-to-br from-[#4A90D9] to-[#8B7FE8] rounded-3xl p-6 relative overflow-hidden">
-          <div className="relative z-10">
+        <div className="rounded-3xl relative overflow-hidden h-40">
+          <img src={maskGroup20} alt="The Ocean Moon" className="absolute inset-0 w-full h-full object-cover" />
+          <div className="absolute inset-0 bg-gradient-to-r from-[#03174C]/80 to-transparent" />
+          <div className="relative z-10 p-6 h-full flex flex-col justify-center">
             <h3 className="text-2xl font-bold text-white mb-2">海洋之月</h3>
             <span className="text-sm text-white/70">
               8小时不间断的最受欢迎助眠音频合集
             </span>
-            <button className="mt-4 bg-white text-[#3F414E] text-sm font-medium px-6 py-2 rounded-full">
+            <button className="mt-4 bg-white text-[#3F414E] text-sm font-medium px-6 py-2 rounded-full w-fit">
               开始
             </button>
           </div>
-          <div className="absolute top-4 right-4 text-5xl opacity-50">🌊</div>
         </div>
       </motion.div>
 
@@ -155,8 +164,8 @@ export function SleepPage() {
           {sleepStories.map(story => <motion.div key={story.id} variants={itemVariants} whileHover={{
           y: -4
         }} onClick={() => navigate('/music')} className="cursor-pointer">
-              <div className="h-32 rounded-2xl mb-2 bg-gradient-to-br from-[#1F265E] to-[#3F4B8C] flex items-center justify-center">
-                <span className="text-4xl">🌙</span>
+              <div className="h-32 rounded-2xl mb-2 overflow-hidden">
+                <img src={story.image} alt={story.title} className="w-full h-full object-cover" />
               </div>
               <h3 className="text-sm font-semibold text-white">
                 {story.title}
