@@ -38,25 +38,29 @@ const meditationItems = [{
   title: '7天平静',
   duration: '第1天 / 共7天',
   bgColor: '#8B7FE8',
-  image: maskGroup11
+  image: maskGroup11,
+  imageKey: 'mask-group-11'
 }, {
   id: 2,
   title: '释放焦虑',
   duration: '10 分钟',
   bgColor: '#FFB4A9',
-  image: maskGroup12
+  image: maskGroup12,
+  imageKey: 'mask-group-12'
 }, {
   id: 3,
   title: '每日平静',
   duration: '15 分钟',
   bgColor: '#B8E0D2',
-  image: maskGroup13
+  image: maskGroup13,
+  imageKey: 'mask-group-13'
 }, {
   id: 4,
   title: '专注',
   duration: '10 分钟',
   bgColor: '#FFE5B4',
-  image: maskGroup14
+  image: maskGroup14,
+  imageKey: 'mask-group-14'
 }];
 
 const containerVariants = {
@@ -155,7 +159,8 @@ export function MeditatePage() {
         listening: 56234,
         bgColor: '#FFE5B4',
         illustrationType: 'emoji',
-        illustrationValue: '🌿'
+        illustrationValue: '🌿',
+        imageKey: 'mask-group-5'
       })} className="rounded-3xl relative overflow-hidden cursor-pointer h-32">
           <img src={maskGroup5} alt="Daily Calm" className="absolute inset-0 w-full h-full object-cover" />
           <div className="absolute inset-0 bg-gradient-to-r from-[#FFE5B4]/90 to-transparent" />
@@ -187,7 +192,8 @@ export function MeditatePage() {
           listening: 2000 + item.id * 100,
           bgColor: item.bgColor,
           illustrationType: 'emoji',
-          illustrationValue: '🧘'
+          illustrationValue: '🧘',
+          imageKey: item.imageKey
         })} className="cursor-pointer">
               <div className="h-32 rounded-2xl mb-2 overflow-hidden" style={{
             backgroundColor: item.bgColor
@@ -222,7 +228,8 @@ export function MeditatePage() {
         listening: 67890,
         bgColor: '#F6F1FB',
         illustrationType: 'emoji',
-        illustrationValue: '🎯'
+        illustrationValue: '🎯',
+        imageKey: 'mask-group-15'
       })} className="rounded-3xl relative overflow-hidden cursor-pointer h-28">
           <img src={maskGroup15} alt="Focus Attention" className="absolute inset-0 w-full h-full object-cover" />
           <div className="absolute inset-0 bg-gradient-to-r from-[#F6F1FB]/90 to-transparent" />

@@ -39,19 +39,22 @@ const recommendedItems = [{
   title: 'Focus',
   duration: 'MEDITATION • 3-10 MIN',
   bgColor: '#8B7FE8',
-  image: maskGroup5
+  image: maskGroup5,
+  imageKey: 'mask-group-5'
 }, {
   id: 2,
   title: 'Happiness',
   duration: 'MEDITATION • 3-10 MIN',
   bgColor: '#FFB4A9',
-  image: maskGroup6
+  image: maskGroup6,
+  imageKey: 'mask-group-6'
 }, {
   id: 3,
   title: 'Relax',
   duration: 'MEDITATION • 3-10 MIN',
   bgColor: '#B8E0D2',
-  image: maskGroup7
+  image: maskGroup7,
+  imageKey: 'mask-group-7'
 }];
 
 export function HomePage() {
@@ -106,7 +109,8 @@ export function HomePage() {
           listening: 20123,
           bgColor: '#8B7FE8',
           illustrationType: 'circle',
-          illustrationValue: 'white'
+          illustrationValue: 'white',
+          imageKey: 'mask-group-11'
         })} className="bg-[#8B7FE8] rounded-3xl relative overflow-hidden cursor-pointer h-48">
             <img src={maskGroup11} alt="Basics" className="absolute inset-0 w-full h-full object-cover" />
             <div className="absolute inset-0 bg-gradient-to-t from-[#8B7FE8]/80 to-transparent" />
@@ -133,7 +137,8 @@ export function HomePage() {
           listening: 15123,
           bgColor: '#FFE5B4',
           illustrationType: 'circle',
-          illustrationValue: '#3F414E'
+          illustrationValue: '#3F414E',
+          imageKey: 'mask-group-10'
         })} className="bg-[#FFE5B4] rounded-3xl relative overflow-hidden cursor-pointer h-48">
             <img src={maskGroup10} alt="Relaxation" className="absolute inset-0 w-full h-full object-cover" />
             <div className="absolute inset-0 bg-gradient-to-t from-[#FFE5B4]/80 to-transparent" />
@@ -172,7 +177,8 @@ export function HomePage() {
         listening: 34234,
         bgColor: '#333242',
         illustrationType: 'circle',
-        illustrationValue: '#8B7FE8'
+        illustrationValue: '#8B7FE8',
+        imageKey: 'mask-group-5'
       })} className="bg-[#333242] rounded-3xl p-5 flex items-center justify-between cursor-pointer">
           <div>
             <h3 className="text-lg font-bold text-white">每日思考</h3>
@@ -211,7 +217,8 @@ export function HomePage() {
           listening: 10000 + item.id * 200,
           bgColor: item.bgColor,
           illustrationType: 'emoji',
-          illustrationValue: '🧘'
+          illustrationValue: '🧘',
+          imageKey: item.imageKey
         })} className="flex-shrink-0 w-40 cursor-pointer">
               <div className="h-28 rounded-2xl mb-2 overflow-hidden" style={{
             backgroundColor: item.bgColor

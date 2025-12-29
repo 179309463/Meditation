@@ -2,7 +2,29 @@ import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { useNavigate, useLocation } from 'react-router-dom';
 import { ArrowLeftIcon, HeartIcon, DownloadIcon, HeadphonesIcon, PlayIcon } from 'lucide-react';
+// 导入所有可能的课程图片
 import maskGroup10 from '../assets/mask-group-10.png';
+import maskGroup11 from '../assets/mask-group-11.png';
+import maskGroup5 from '../assets/mask-group-5.png';
+import maskGroup6 from '../assets/mask-group-6.png';
+import maskGroup7 from '../assets/mask-group-7.png';
+import maskGroup12 from '../assets/mask-group-12.png';
+import maskGroup13 from '../assets/mask-group-13.png';
+import maskGroup14 from '../assets/mask-group-14.png';
+import maskGroup15 from '../assets/mask-group-15.png';
+
+// 图片映射表
+const imageMap: Record<string, string> = {
+  'mask-group-5': maskGroup5,
+  'mask-group-6': maskGroup6,
+  'mask-group-7': maskGroup7,
+  'mask-group-10': maskGroup10,
+  'mask-group-11': maskGroup11,
+  'mask-group-12': maskGroup12,
+  'mask-group-13': maskGroup13,
+  'mask-group-14': maskGroup14,
+  'mask-group-15': maskGroup15,
+};
 
 // Define the Course type with serializable image data
 export type Course = {
@@ -16,7 +38,8 @@ export type Course = {
   textColor?: string;
   illustrationType: 'sun' | 'circle' | 'emoji' | 'image';
   illustrationValue?: string; // color for circle, emoji character, or image path
-  image?: string;
+  image?: string; // 图片标识符，用于从 imageMap 获取实际图片
+  imageKey?: string; // 图片的 key，用于动态加载
 };
 
 const defaultTracks = [{
@@ -47,8 +70,22 @@ export function CourseDetailPage() {
     favorites: 24234,
     listening: 34234,
     bgColor: '#F2C94C',
-    illustrationType: 'sun'
+    illustrationType: 'sun',
+    imageKey: 'mask-group-10'
   };
+
+  // 获取课程图片
+  const getCourseImage = () => {
+    if (course.imageKey && imageMap[course.imageKey]) {
+      return imageMap[course.imageKey];
+    }
+    if (course.image) {
+      return course.image;
+    }
+    return maskGroup10; // 默认图片
+  };
+
+  const courseImage = getCourseImage();
 
   return <motion.main initial={{
     opacity: 0
@@ -63,7 +100,7 @@ export function CourseDetailPage() {
     }}>
         {/* Illustration */}
         <div className="absolute inset-0">
-          <img src={maskGroup10} alt={course.title} className="w-full h-full object-cover" />
+          <img src={courseImage} alt={course.title} className="w-full h-full object-cover" />
         </div>
 
         {/* Header Controls */}
