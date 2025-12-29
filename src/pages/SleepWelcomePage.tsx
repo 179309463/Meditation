@@ -64,12 +64,9 @@ export function SleepWelcomePage() {
       }} transition={{
         delay: 0.2
       }} className="text-center mb-12">
-          <h1 className="text-3xl font-bold text-white mb-4">
-            Welcome to Sleep
-          </h1>
+          <h1 className="text-3xl font-bold text-white mb-4">欢迎来到睡眠</h1>
           <p className="text-[#E6E7F2] text-sm leading-relaxed max-w-xs mx-auto">
-            Explore the new king of sleep. It uses sound and visualization to
-            create perfect conditions for refreshing sleep.
+            探索睡眠的新境界。它利用声音和视觉效果，为清爽的睡眠创造完美条件。
           </p>
         </motion.div>
 
@@ -178,7 +175,7 @@ export function SleepWelcomePage() {
       delay: 0.6
     }} className="px-6 pb-12 relative z-10">
         <Button variant="primary" onClick={() => navigate('/sleep')} className="bg-[#8B7FE8] hover:bg-[#7A6FD7]">
-          GET STARTED
+          开始使用
         </Button>
       </motion.div>
     </motion.main>;

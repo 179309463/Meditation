@@ -36,12 +36,12 @@ export function OnboardingTime() {
       y: 0
     }} className="mb-8">
         <h1 className="text-2xl font-bold text-[#3F414E] mb-2">
-          What time would you
+          您想在什么时间
           <br />
-          like to meditate?
+          进行冥想？
         </h1>
         <p className="text-[#A1A4B2] text-sm leading-relaxed">
-          Any time you can choose but We recommend first thing in the morning.
+          您可以选择任何时间，但我们推荐在清晨。
         </p>
       </motion.div>
 
@@ -68,12 +68,12 @@ export function OnboardingTime() {
       delay: 0.3
     }} className="mb-8">
         <h2 className="text-2xl font-bold text-[#3F414E] mb-2">
-          Which day would you
+          您想在哪天
           <br />
-          like to meditate?
+          进行冥想？
         </h2>
         <p className="text-[#A1A4B2] text-sm leading-relaxed mb-6">
-          Everyday is best, but we recommend picking at least five.
+          每天最好，但我们建议至少选择五天。
         </p>
 
         <div className="flex items-center justify-center">
@@ -93,10 +93,10 @@ export function OnboardingTime() {
       delay: 0.4
     }} className="space-y-4">
         <Button variant="primary" onClick={handleSave}>
-          SAVE
+          保存
         </Button>
         <button onClick={handleSkip} className="w-full py-3 text-sm text-[#3F414E] font-medium">
-          NO THANKS
+          不用了，谢谢
         </button>
       </motion.div>
     </motion.main>;

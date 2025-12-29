@@ -97,20 +97,20 @@ export function WelcomePage() {
       delay: 0.4
     }} className="px-6 pb-8">
         <h1 className="text-3xl font-bold text-[#3F414E] text-center mb-3">
-          We are what we do
+          我们即我们所做
         </h1>
         <p className="text-[#A1A4B2] text-center text-sm leading-relaxed mb-8">
-          Thousand of people are using silent moon for small meditation
+          成千上万的人正在使用 Silent Moon 进行冥想
         </p>
 
         <div className="space-y-4">
           <Button variant="primary" onClick={() => navigate('/signup')}>
-            SIGN UP
+            注册
           </Button>
           <p className="text-center text-sm text-[#A1A4B2]">
-            ALREADY HAVE AN ACCOUNT?{' '}
+            已有账号？{' '}
             <button onClick={() => navigate('/login')} className="text-[#8B7FE8] font-semibold">
-              LOG IN
+              登录
             </button>
           </p>
         </div>

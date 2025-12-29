@@ -6,47 +6,47 @@ import { useNavigate } from 'react-router-dom';
 import type { Course } from './CourseDetailPage';
 const categories = [{
   id: 'all',
-  label: 'All',
+  label: '全部',
   icon: <SparklesIcon className="w-4 h-4" />
 }, {
   id: 'my',
-  label: 'My',
+  label: '我的',
   icon: <HeartIcon className="w-4 h-4" />
 }, {
   id: 'anxious',
-  label: 'Anxious',
+  label: '焦虑',
   icon: <SmileIcon className="w-4 h-4" />
 }, {
   id: 'sleep',
-  label: 'Sleep',
+  label: '睡眠',
   icon: <MoonIcon className="w-4 h-4" />
 }, {
   id: 'kids',
-  label: 'Kids',
+  label: '儿童',
   icon: <BabyIcon className="w-4 h-4" />
 }];
 const meditationItems = [{
   id: 1,
-  title: '7 Days of Calm',
-  duration: 'Day 1 of 7',
+  title: '7天平静',
+  duration: '第1天 / 共7天',
   bgColor: '#8B7FE8',
   emoji: '🧘‍♀️'
 }, {
   id: 2,
-  title: 'Anxiet Release',
-  duration: '10 MIN',
+  title: '释放焦虑',
+  duration: '10 分钟',
   bgColor: '#FFB4A9',
   emoji: '🌸'
 }, {
   id: 3,
-  title: 'Daily Calm',
-  duration: '15 MIN',
+  title: '每日平静',
+  duration: '15 分钟',
   bgColor: '#B8E0D2',
   emoji: '🌿'
 }, {
   id: 4,
-  title: 'Focus',
-  duration: '10 MIN',
+  title: '专注',
+  duration: '10 分钟',
   bgColor: '#FFE5B4',
   emoji: '🎯'
 }];
@@ -94,7 +94,7 @@ export function MeditatePage() {
         opacity: 1,
         y: 0
       }} className="text-2xl font-bold text-[#3F414E] mb-2">
-          Meditate
+          冥想
         </motion.h1>
         <motion.p initial={{
         opacity: 0,
@@ -105,8 +105,7 @@ export function MeditatePage() {
       }} transition={{
         delay: 0.1
       }} className="text-[#A1A4B2] text-sm leading-relaxed">
-          we can learn how to recognize when our minds are doing their normal
-          everyday acrobatics.
+          我们可以学习如何识别大脑何时在进行日常的思维活动。
         </motion.p>
       </header>
 
@@ -137,10 +136,10 @@ export function MeditatePage() {
       delay: 0.3
     }} className="px-6 mt-6">
         <div onClick={() => navigateToCourse({
-        title: 'Daily Calm',
-        subtitle: 'PAUSE PRACTICE',
-        description: "Take a moment to pause and breathe with today's daily calm session.",
-        duration: '3-10 MIN',
+        title: '每日平静',
+        subtitle: '暂停练习',
+        description: '花点时间暂停并呼吸，开始今天的每日平静课程。',
+        duration: '3-10 分钟',
         favorites: 45234,
         listening: 56234,
         bgColor: '#FFE5B4',
@@ -148,9 +147,9 @@ export function MeditatePage() {
         illustrationValue: '🌿'
       })} className="bg-[#FFE5B4] rounded-3xl p-5 flex items-center justify-between cursor-pointer">
           <div>
-            <h3 className="text-lg font-bold text-[#3F414E]">Daily Calm</h3>
+            <h3 className="text-lg font-bold text-[#3F414E]">每日平静</h3>
             <span className="text-xs text-[#3F414E]/60">
-              APR 30 • PAUSE PRACTICE
+              4月30日 • 暂停练习
             </span>
           </div>
           <button className="w-16 h-16 bg-[#3F414E] rounded-full flex items-center justify-center">
@@ -166,8 +165,8 @@ export function MeditatePage() {
           y: -4
         }} onClick={() => navigateToCourse({
           title: item.title,
-          subtitle: 'MEDITATION',
-          description: 'A guided session to help you find your center.',
+          subtitle: '冥想',
+          description: '引导课程帮助您找到内心的中心。',
           duration: item.duration,
           favorites: 1000 + item.id * 50,
           listening: 2000 + item.id * 100,
@@ -198,14 +197,12 @@ export function MeditatePage() {
     }} transition={{
       delay: 0.5
     }} className="px-6 mt-8">
-        <h2 className="text-xl font-bold text-[#3F414E] mb-4">
-          Focus Attention
-        </h2>
+        <h2 className="text-xl font-bold text-[#3F414E] mb-4">专注力</h2>
         <div onClick={() => navigateToCourse({
-        title: 'Focus Attention',
-        subtitle: '7 DAYS OF CALM',
-        description: 'A 7-day series designed to improve your focus and concentration.',
-        duration: '10 MIN',
+        title: '专注力',
+        subtitle: '7天平静',
+        description: '为期7天的系列课程，旨在提高您的专注力和注意力。',
+        duration: '10 分钟',
         favorites: 12345,
         listening: 67890,
         bgColor: '#F6F1FB',
@@ -214,10 +211,8 @@ export function MeditatePage() {
       })} className="bg-[#F6F1FB] rounded-3xl p-6 cursor-pointer">
           <div className="flex items-center justify-between">
             <div>
-              <h3 className="text-lg font-bold text-[#3F414E]">
-                Focus Attention
-              </h3>
-              <span className="text-xs text-[#A1A4B2]">7 DAYS OF CALM</span>
+              <h3 className="text-lg font-bold text-[#3F414E]">专注力</h3>
+              <span className="text-xs text-[#A1A4B2]">7天平静</span>
             </div>
             <span className="text-5xl">🎯</span>
           </div>

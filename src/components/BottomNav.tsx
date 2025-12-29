@@ -18,24 +18,24 @@ export function BottomNav({
   const location = useLocation();
   const navItems: NavItem[] = [{
     icon: <HomeIcon className="w-6 h-6" />,
-    label: 'Home',
+    label: '首页',
     path: '/home'
   }, {
     icon: <MoonIcon className="w-6 h-6" />,
-    label: 'Sleep',
+    label: '睡眠',
     path: '/sleep-welcome',
     activePaths: ['/sleep-welcome', '/sleep'] // Both paths should show Sleep as active
   }, {
     icon: <BrainIcon className="w-6 h-6" />,
-    label: 'Meditate',
+    label: '冥想',
     path: '/meditate'
   }, {
     icon: <MusicIcon className="w-6 h-6" />,
-    label: 'Music',
+    label: '音乐',
     path: '/music'
   }, {
     icon: <UserIcon className="w-6 h-6" />,
-    label: 'Afsar',
+    label: '我的',
     path: '/profile'
   }];
   const bgColor = theme === 'dark' ? 'bg-[#03174C]' : 'bg-white';

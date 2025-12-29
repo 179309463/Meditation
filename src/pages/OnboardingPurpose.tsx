@@ -10,32 +10,32 @@ type Purpose = {
 };
 const purposes: Purpose[] = [{
   id: 'stress',
-  title: 'Reduce Stress',
+  title: '减轻压力',
   bgColor: '#8B7FE8',
   image: '🧘‍♀️'
 }, {
   id: 'performance',
-  title: 'Improve Performance',
+  title: '提高表现',
   bgColor: '#FFB4A9',
   image: '🎯'
 }, {
   id: 'happiness',
-  title: 'Increase Happiness',
+  title: '增加幸福感',
   bgColor: '#FFE5B4',
   image: '😊'
 }, {
   id: 'anxiety',
-  title: 'Reduce Anxiety',
+  title: '缓解焦虑',
   bgColor: '#B8E0D2',
   image: '🌿'
 }, {
   id: 'growth',
-  title: 'Personal Growth',
+  title: '个人成长',
   bgColor: '#E8D5F2',
   image: '🌱'
 }, {
   id: 'sleep',
-  title: 'Better Sleep',
+  title: '改善睡眠',
   bgColor: '#A594F9',
   image: '😴'
 }];
@@ -86,11 +86,11 @@ export function OnboardingPurpose() {
       y: 0
     }} className="mb-8">
         <h1 className="text-2xl font-bold text-[#3F414E] mb-2">
-          What Brings you
+          是什么让您
           <br />
-          to Silent Moon?
+          来到 Silent Moon？
         </h1>
-        <p className="text-[#A1A4B2] text-sm">choose a topic to focus on:</p>
+        <p className="text-[#A1A4B2] text-sm">选择一个关注的主题：</p>
       </motion.div>
 
       <motion.div variants={containerVariants} initial="hidden" animate="visible" className="grid grid-cols-2 gap-4 flex-1">
@@ -121,7 +121,7 @@ export function OnboardingPurpose() {
       delay: 0.6
     }} className="mt-8">
         <Button variant="primary" onClick={handleContinue}>
-          GET STARTED
+          开始使用
         </Button>
       </motion.div>
     </motion.main>;

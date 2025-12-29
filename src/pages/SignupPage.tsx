@@ -45,7 +45,7 @@ export function SignupPage() {
       }} transition={{
         delay: 0.1
       }} className="text-3xl font-bold text-[#3F414E] text-center mb-8">
-          Create your account
+          创建您的账号
         </motion.h1>
 
         <motion.div initial={{
@@ -57,8 +57,8 @@ export function SignupPage() {
       }} transition={{
         delay: 0.2
       }} className="space-y-4 mb-6">
-          <Button variant="facebook">CONTINUE WITH FACEBOOK</Button>
-          <Button variant="google">CONTINUE WITH GOOGLE</Button>
+          <Button variant="facebook">通过 FACEBOOK 继续</Button>
+          <Button variant="google">通过 GOOGLE 继续</Button>
         </motion.div>
 
         <motion.div initial={{
@@ -70,7 +70,7 @@ export function SignupPage() {
       }} className="flex items-center gap-4 mb-6">
           <div className="flex-1 h-px bg-[#EBEAEC]" />
           <span className="text-xs text-[#A1A4B2] uppercase tracking-wide">
-            Or log in with email
+            或使用邮箱登录
           </span>
           <div className="flex-1 h-px bg-[#EBEAEC]" />
         </motion.div>
@@ -84,9 +84,9 @@ export function SignupPage() {
       }} transition={{
         delay: 0.4
       }} className="space-y-4 mb-4">
-          <Input type="text" placeholder="Name" value={name} onChange={setName} isValid={isNameValid} showValidation={name.length > 0} />
-          <Input type="email" placeholder="Email address" value={email} onChange={setEmail} isValid={isEmailValid} showValidation={email.length > 0} />
-          <Input type="password" placeholder="Password" value={password} onChange={setPassword} isValid={isPasswordValid} showValidation={password.length > 0} />
+          <Input type="text" placeholder="姓名" value={name} onChange={setName} isValid={isNameValid} showValidation={name.length > 0} />
+          <Input type="email" placeholder="邮箱地址" value={email} onChange={setEmail} isValid={isEmailValid} showValidation={email.length > 0} />
+          <Input type="password" placeholder="密码" value={password} onChange={setPassword} isValid={isPasswordValid} showValidation={password.length > 0} />
         </motion.div>
 
         <motion.label initial={{
@@ -105,10 +105,8 @@ export function SignupPage() {
             </div>
           </div>
           <span className="text-sm text-[#A1A4B2]">
-            I have read the{' '}
-            <button className="text-[#8B7FE8] font-medium">
-              Privacy Policy
-            </button>
+            我已阅读{' '}
+            <button className="text-[#8B7FE8] font-medium">隐私政策</button>
           </span>
         </motion.label>
 
@@ -122,7 +120,7 @@ export function SignupPage() {
         delay: 0.6
       }}>
           <Button variant="primary" onClick={handleSignup}>
-            GET STARTED
+            开始使用
           </Button>
         </motion.div>
       </div>
@@ -134,9 +132,9 @@ export function SignupPage() {
     }} transition={{
       delay: 0.7
     }} className="text-center pb-8 text-sm text-[#A1A4B2]">
-        ALREADY HAVE AN ACCOUNT?{' '}
+        已有账号？{' '}
         <button onClick={() => navigate('/login')} className="text-[#8B7FE8] font-semibold">
-          SIGN UP
+          登录
         </button>
       </motion.p>
     </motion.main>;

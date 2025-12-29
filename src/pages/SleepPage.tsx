@@ -5,41 +5,41 @@ import { BottomNav } from '../components/BottomNav';
 import { useNavigate } from 'react-router-dom';
 const categories = [{
   id: 'all',
-  label: 'All',
+  label: '全部',
   icon: <SparklesIcon className="w-4 h-4" />
 }, {
   id: 'my',
-  label: 'My',
+  label: '我的',
   icon: <HeartIcon className="w-4 h-4" />
 }, {
   id: 'anxious',
-  label: 'Anxious',
+  label: '焦虑',
   icon: <SmileIcon className="w-4 h-4" />
 }, {
   id: 'sleep',
-  label: 'Sleep',
+  label: '睡眠',
   icon: <MoonIcon className="w-4 h-4" />
 }, {
   id: 'kids',
-  label: 'Kids',
+  label: '儿童',
   icon: <BabyIcon className="w-4 h-4" />
 }];
 const sleepStories = [{
   id: 1,
-  title: 'Night Island',
-  duration: '45 MIN • SLEEP MUSIC'
+  title: '夜之岛',
+  duration: '45 分钟 • 助眠音乐'
 }, {
   id: 2,
-  title: 'Sweet Sleep',
-  duration: '45 MIN • SLEEP MUSIC'
+  title: '甜蜜睡眠',
+  duration: '45 分钟 • 助眠音乐'
 }, {
   id: 3,
-  title: 'Good Night',
-  duration: '45 MIN • SLEEP MUSIC'
+  title: '晚安',
+  duration: '45 分钟 • 助眠音乐'
 }, {
   id: 4,
-  title: 'Moon Clouds',
-  duration: '45 MIN • SLEEP MUSIC'
+  title: '月亮云彩',
+  duration: '45 分钟 • 助眠音乐'
 }];
 const containerVariants = {
   hidden: {
@@ -81,10 +81,9 @@ export function SleepPage() {
         opacity: 1,
         y: 0
       }} className="text-center mb-6">
-          <h1 className="text-2xl font-bold text-white mb-2">Sleep Stories</h1>
+          <h1 className="text-2xl font-bold text-white mb-2">睡前故事</h1>
           <p className="text-[#E6E7F2]/70 text-sm leading-relaxed">
-            Soothing bedtime stories to help you fall into a deep and natural
-            sleep
+            舒缓的睡前故事，帮助您进入深度自然的睡眠
           </p>
         </motion.div>
 
@@ -138,14 +137,12 @@ export function SleepPage() {
     }} className="px-6 mt-6">
         <div className="bg-gradient-to-br from-[#4A90D9] to-[#8B7FE8] rounded-3xl p-6 relative overflow-hidden">
           <div className="relative z-10">
-            <h3 className="text-2xl font-bold text-white mb-2">
-              The Ocean Moon
-            </h3>
+            <h3 className="text-2xl font-bold text-white mb-2">海洋之月</h3>
             <span className="text-sm text-white/70">
-              Non-stop 8-hour mixes of our most popular sleep audio
+              8小时不间断的最受欢迎助眠音频合集
             </span>
             <button className="mt-4 bg-white text-[#3F414E] text-sm font-medium px-6 py-2 rounded-full">
-              START
+              开始
             </button>
           </div>
           <div className="absolute top-4 right-4 text-5xl opacity-50">🌊</div>

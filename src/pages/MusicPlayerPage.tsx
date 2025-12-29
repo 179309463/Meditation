@@ -5,12 +5,12 @@ import { XIcon, HeartIcon, DownloadIcon } from 'lucide-react';
 import { AudioPlayer } from '../components/AudioPlayer';
 const relatedTracks = [{
   id: 1,
-  title: 'Moon Clouds',
-  duration: '45 MIN • SLEEP MUSIC'
+  title: '月亮云彩',
+  duration: '45 分钟 • 助眠音乐'
 }, {
   id: 2,
-  title: 'Sweet Sleep',
-  duration: '45 MIN • SLEEP MUSIC'
+  title: '甜蜜睡眠',
+  duration: '45 分钟 • 助眠音乐'
 }];
 export function MusicPlayerPage() {
   const navigate = useNavigate();
@@ -99,9 +99,9 @@ export function MusicPlayerPage() {
     }} transition={{
       delay: 0.3
     }} className="px-6 text-center mb-8">
-        <h1 className="text-3xl font-bold text-white mb-2">Night Island</h1>
+        <h1 className="text-3xl font-bold text-white mb-2">夜之岛</h1>
         <p className="text-[#98A1BD] text-sm uppercase tracking-wide">
-          SLEEP MUSIC
+          助眠音乐
         </p>
       </motion.div>
 
@@ -128,7 +128,7 @@ export function MusicPlayerPage() {
     }} transition={{
       delay: 0.5
     }} className="px-6 pb-8">
-        <h2 className="text-lg font-bold text-white mb-4">Related</h2>
+        <h2 className="text-lg font-bold text-white mb-4">相关推荐</h2>
         <div className="space-y-3">
           {relatedTracks.map(track => <motion.div key={track.id} whileHover={{
           x: 4

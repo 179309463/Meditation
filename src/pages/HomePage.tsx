@@ -79,10 +79,10 @@ export function HomePage() {
 
         <motion.div variants={containerVariants} initial="hidden" animate="visible" className="px-6 pt-4">
           <motion.h1 variants={itemVariants} className="text-2xl font-bold text-[#3F414E]">
-            Good Morning, Afsar
+            早上好，Afsar
           </motion.h1>
           <motion.p variants={itemVariants} className="text-[#A1A4B2] text-sm">
-            We Wish you have a good day
+            祝您拥有美好的一天
           </motion.p>
         </motion.div>
       </div>
@@ -93,10 +93,10 @@ export function HomePage() {
           <motion.div variants={itemVariants} whileHover={{
           y: -4
         }} onClick={() => navigateToCourse({
-          title: 'Basics',
-          subtitle: 'COURSE',
-          description: 'Learn the fundamentals of meditation in this introductory course.',
-          duration: '3-10 MIN',
+          title: '基础',
+          subtitle: '课程',
+          description: '在这个入门课程中学习冥想的基础知识。',
+          duration: '3-10 分钟',
           favorites: 12543,
           listening: 20123,
           bgColor: '#8B7FE8',
@@ -104,12 +104,12 @@ export function HomePage() {
           illustrationValue: 'white'
         })} className="bg-[#8B7FE8] rounded-3xl p-5 relative overflow-hidden cursor-pointer">
             <span className="text-xs font-medium text-white/80 uppercase tracking-wide">
-              COURSE
+              课程
             </span>
-            <h3 className="text-lg font-bold text-white mt-1">Basics</h3>
-            <span className="text-xs text-white/70 block mt-1">3-10 MIN</span>
+            <h3 className="text-lg font-bold text-white mt-1">基础</h3>
+            <span className="text-xs text-white/70 block mt-1">3-10 分钟</span>
             <button className="mt-3 bg-white/20 text-white text-xs font-medium px-4 py-2 rounded-full">
-              START
+              开始
             </button>
             <div className="absolute -bottom-4 -right-4 w-24 h-24 opacity-30">
               <svg viewBox="0 0 100 100" className="w-full h-full">
@@ -121,10 +121,10 @@ export function HomePage() {
           <motion.div variants={itemVariants} whileHover={{
           y: -4
         }} onClick={() => navigateToCourse({
-          title: 'Relaxation',
-          subtitle: 'MUSIC',
-          description: 'Calming sounds to help you relax and unwind after a long day.',
-          duration: '3-10 MIN',
+          title: '放松',
+          subtitle: '音乐',
+          description: '舒缓的声音帮助您在漫长的一天后放松身心。',
+          duration: '3-10 分钟',
           favorites: 8543,
           listening: 15123,
           bgColor: '#FFE5B4',
@@ -132,16 +132,14 @@ export function HomePage() {
           illustrationValue: '#3F414E'
         })} className="bg-[#FFE5B4] rounded-3xl p-5 relative overflow-hidden cursor-pointer">
             <span className="text-xs font-medium text-[#3F414E]/70 uppercase tracking-wide">
-              MUSIC
+              音乐
             </span>
-            <h3 className="text-lg font-bold text-[#3F414E] mt-1">
-              Relaxation
-            </h3>
+            <h3 className="text-lg font-bold text-[#3F414E] mt-1">放松</h3>
             <span className="text-xs text-[#3F414E]/60 block mt-1">
-              3-10 MIN
+              3-10 分钟
             </span>
             <button className="mt-3 bg-[#3F414E] text-white text-xs font-medium px-4 py-2 rounded-full">
-              START
+              开始
             </button>
             <div className="absolute -bottom-4 -right-4 w-24 h-24 opacity-20">
               <svg viewBox="0 0 100 100" className="w-full h-full">
@@ -163,10 +161,10 @@ export function HomePage() {
       delay: 0.3
     }} className="px-6 mt-6">
         <div onClick={() => navigateToCourse({
-        title: 'Daily Thought',
-        subtitle: 'MEDITATION',
-        description: 'A daily dose of wisdom and mindfulness to start your day right.',
-        duration: '3-10 MIN',
+        title: '每日思考',
+        subtitle: '冥想',
+        description: '每日的智慧和正念，开启美好的一天。',
+        duration: '3-10 分钟',
         favorites: 24234,
         listening: 34234,
         bgColor: '#333242',
@@ -174,8 +172,8 @@ export function HomePage() {
         illustrationValue: '#8B7FE8'
       })} className="bg-[#333242] rounded-3xl p-5 flex items-center justify-between cursor-pointer">
           <div>
-            <h3 className="text-lg font-bold text-white">Daily Thought</h3>
-            <span className="text-xs text-white/60">MEDITATION • 3-10 MIN</span>
+            <h3 className="text-lg font-bold text-white">每日思考</h3>
+            <span className="text-xs text-white/60">冥想 • 3-10 分钟</span>
           </div>
           <div className="flex items-center gap-4">
             <div className="flex items-center gap-2 text-white/60">
@@ -196,16 +194,16 @@ export function HomePage() {
       {/* Recommended Section */}
       <motion.div variants={containerVariants} initial="hidden" animate="visible" className="px-6 mt-8">
         <motion.h2 variants={itemVariants} className="text-xl font-bold text-[#3F414E] mb-4">
-          Recommended for you
+          为您推荐
         </motion.h2>
         <div className="flex gap-4 overflow-x-auto pb-4 -mx-6 px-6 scrollbar-hide">
           {recommendedItems.map(item => <motion.div key={item.id} variants={itemVariants} whileHover={{
           y: -4
         }} onClick={() => navigateToCourse({
           title: item.title,
-          subtitle: 'MEDITATION',
-          description: 'Recommended meditation session tailored just for you.',
-          duration: '3-10 MIN',
+          subtitle: '冥想',
+          description: '为您量身定制的推荐冥想课程。',
+          duration: '3-10 分钟',
           favorites: 5000 + item.id * 100,
           listening: 10000 + item.id * 200,
           bgColor: item.bgColor,
@@ -220,7 +218,9 @@ export function HomePage() {
               <h3 className="text-sm font-semibold text-[#3F414E]">
                 {item.title}
               </h3>
-              <span className="text-xs text-[#A1A4B2]">{item.duration}</span>
+              <span className="text-xs text-[#A1A4B2]">
+                {item.duration.replace('MEDITATION', '冥想').replace('MIN', '分钟')}
+              </span>
             </motion.div>)}
         </div>
       </motion.div>

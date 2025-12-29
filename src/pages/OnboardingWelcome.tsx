@@ -74,17 +74,17 @@ export function OnboardingWelcome() {
       delay: 0.4
     }} className="px-6 pb-8">
         <h1 className="text-3xl font-bold text-white text-center mb-2">
-          Hi Afsar, Welcome
+          你好 Afsar，欢迎
         </h1>
         <h2 className="text-2xl font-bold text-white text-center mb-3">
-          to Silent Moon
+          来到 Silent Moon
         </h2>
         <p className="text-white/80 text-center text-sm leading-relaxed mb-8">
-          Explore the app, Find some peace of mind to prepare for meditation.
+          探索应用，寻找内心的平静，为冥想做好准备。
         </p>
 
         <Button variant="secondary" onClick={() => navigate('/onboarding/purpose')} className="bg-white text-[#3F414E]">
-          GET STARTED
+          开始使用
         </Button>
       </motion.div>
     </motion.main>;

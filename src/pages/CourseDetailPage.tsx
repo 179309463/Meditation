@@ -17,16 +17,16 @@ export type Course = {
 };
 const defaultTracks = [{
   id: 1,
-  title: 'Focus Attention',
-  duration: '10 MIN'
+  title: '集中注意力',
+  duration: '10 分钟'
 }, {
   id: 2,
-  title: 'Body Scan',
-  duration: '5 MIN'
+  title: '身体扫描',
+  duration: '5 分钟'
 }, {
   id: 3,
-  title: 'Making Happiness',
-  duration: '3 MIN'
+  title: '创造快乐',
+  duration: '3 分钟'
 }];
 export function CourseDetailPage() {
   const navigate = useNavigate();
@@ -34,10 +34,10 @@ export function CourseDetailPage() {
   const [activeTab, setActiveTab] = useState<'MALE' | 'FEMALE'>('MALE');
   // Get course data from location state, fallback to default if accessed directly
   const course = location.state as Course || {
-    title: 'Happy Morning',
-    subtitle: 'COURSE',
-    description: "Ease the mind into a restful night's sleep with these deep, ambient tones.",
-    duration: '3-10 MIN',
+    title: '快乐早晨',
+    subtitle: '课程',
+    description: '用这些深沉的环境音调让心灵放松，进入安稳的睡眠。',
+    duration: '3-10 分钟',
     favorites: 24234,
     listening: 34234,
     bgColor: '#F2C94C',
@@ -116,29 +116,27 @@ export function CourseDetailPage() {
           <div className="flex items-center gap-2 text-[#A1A4B2]">
             <HeartIcon className="w-4 h-4 text-[#FF9EAE] fill-[#FF9EAE]" />
             <span className="text-xs font-medium">
-              {course.favorites.toLocaleString()} Favorites
+              {course.favorites.toLocaleString()} 收藏
             </span>
           </div>
           <div className="flex items-center gap-2 text-[#A1A4B2]">
             <HeadphonesIcon className="w-4 h-4 text-[#7FD4C1]" />
             <span className="text-xs font-medium">
-              {course.listening.toLocaleString()} Listening
+              {course.listening.toLocaleString()} 收听
             </span>
           </div>
         </div>
 
         {/* Narrator Selection */}
         <div className="mb-6">
-          <h2 className="text-lg font-bold text-[#3F414E] mb-4">
-            Pick a Narrator
-          </h2>
+          <h2 className="text-lg font-bold text-[#3F414E] mb-4">选择旁白</h2>
           <div className="flex border-b border-[#EBEAEC]">
             <button onClick={() => setActiveTab('MALE')} className={`pb-3 text-sm font-medium mr-8 relative ${activeTab === 'MALE' ? 'text-[#8B7FE8]' : 'text-[#A1A4B2]'}`}>
-              MALE VOICE
+              男声
               {activeTab === 'MALE' && <motion.div layoutId="activeTab" className="absolute bottom-0 left-0 right-0 h-0.5 bg-[#8B7FE8]" />}
             </button>
             <button onClick={() => setActiveTab('FEMALE')} className={`pb-3 text-sm font-medium relative ${activeTab === 'FEMALE' ? 'text-[#8B7FE8]' : 'text-[#A1A4B2]'}`}>
-              FEMALE VOICE
+              女声
               {activeTab === 'FEMALE' && <motion.div layoutId="activeTab" className="absolute bottom-0 left-0 right-0 h-0.5 bg-[#8B7FE8]" />}
             </button>
           </div>
